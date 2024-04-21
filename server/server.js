@@ -1,15 +1,17 @@
 // Load env variables
+import dotenv from "dotenv";
 if (process.env.NODE_ENV != "production") {
-  require("dotenv").config();
+  dotenv.config();
 }
 
 // import dependencies
-const express = require("express");
-const cors = require("cors");
-// const cookieParser = require("cookie-parser");
-const connectToDb = require("./config/connectToDb");
+import express from "express";
+import cors from "cors";
 
-import postRoutes from "./routes/posts.js";
+import connectToDb from "./config/connectToDb.js";
+// const cookieParser = require("cookie-parser");
+
+import visitRoutes from "./routes/visits.js";
 
 // const notesController = require("./controllers/notesController");
 // const usersController = require("./controllers/usersController");
@@ -28,6 +30,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use("/visits", visitRoutes);
 
 // Connect to database
 connectToDb();
