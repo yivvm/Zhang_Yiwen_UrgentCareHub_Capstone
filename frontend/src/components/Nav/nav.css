@@ -1,0 +1,33 @@
+.Nav {
+    flex: 1;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Add your desired background color */
+    z-index: 1000;
+}
+
+.Nav ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50px;
+}
+
+.Nav ul li {
+    list-style: none;
+}
+
+.Nav ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.Nav ul li a:hover {
+    color: #023E8A;
+    font-weight: bold;
+}

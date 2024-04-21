@@ -1,14 +1,32 @@
-import { useState } from 'react'
 import './App.css'
 
+//#region Page imports
+import Nav from './components/Nav/Nav'
+import Schedule from './pages/Schedule/Schedule';
+// import Departments from './pages/Departments/Departments'
+
+// import Home from './pages/Home/Home'
+// import About from './pages/About/About'
+//#endregion
+
+import { Route, Routes } from 'react-router-dom' 
+
+//#region Functional Components
 function App() {
-  
 
   return (
-    <div>
-      <h1>hello app</h1>
+    <div className='App'>
+      <Nav />
+
+      <Routes>
+        {/* <Route path='/' element={<Home />} /> */}
+        <Route path='/schedule' element={<Schedule />} />
+        {/* <Route path='/departments' element={<Departments />} /> */}
+      </Routes>
+
     </div>
   )
 }
+//#endregion
 
 export default App
