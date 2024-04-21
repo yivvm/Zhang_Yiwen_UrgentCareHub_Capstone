@@ -9,6 +9,7 @@ export default function Account() {
       <div>
         <Visits />
       </div>
+      <h1>Past Visits</h1>
     </div>
   )
 }
