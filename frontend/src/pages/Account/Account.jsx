@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { getVisits } from '../../actions/visits.js'
 
 import Visits from '../../components/account/Visits'
 
 export default function Account() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getVisits())
+  }, [dispatch])
+
   return (
     <div>
       <h1>Upcoming Visits</h1>

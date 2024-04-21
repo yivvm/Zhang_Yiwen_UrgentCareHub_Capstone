@@ -1,0 +1,40 @@
+.schedule-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 1rem; */
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: auto;
+}
+
+.schedule-form {
+    display: flex;
+}
+
+.location {
+    flex: 1;
+    padding: 0 1rem;
+}
+
+.schedule {
+    flex: 2;
+    padding: 0 1rem;
+}
+
+.image-container {
+    max-width: 100%; /* Set maximum width to 100% of its container */
+    margin: 0 auto; 
+    overflow: hidden; 
+  }
+  
+img {
+    width: 100%; /* Set image width to 100% of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure image behaves like a block element */
+}
