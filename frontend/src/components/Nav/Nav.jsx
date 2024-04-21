@@ -10,13 +10,13 @@ export default function Nav() {
             <Link to="/">Find a Doctor</Link>
         </li>
         <li>
-            <Link to="/schedule">Schedule Appointment Online</Link>
-        </li>
-        <li>
             <Link to="/departments">Departments</Link>
         </li>
         <li>
-            <Link to="/">My Health Account</Link>
+            <Link to="/schedule">Schedule Appointment Online</Link>
+        </li>
+        <li>
+            <Link to="/account">My Health Account</Link>
         </li>
       </ul>
     </nav>
