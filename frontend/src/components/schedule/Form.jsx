@@ -70,6 +70,7 @@ export default function Form({ currentId, setCurrentId }) {
             <div>
                 <label htmlFor="legalsex">Legal Sex</label>
                 <span style={{ fontSize: "10px", color: "grey" }}>(Your legal sex is what is listed on your ID.)</span>
+                <br />
                 <input
                     type="radio"
                     id="female"
@@ -91,16 +92,18 @@ export default function Form({ currentId, setCurrentId }) {
             </div>
 
             <div>
+                <br />
                 <label htmlFor="contact">How can we contact you for your visit?</label>
             </div>
             <div>
-                <input name="phone" id="phone" type="tel" placeholder="Mobile Phone Number (XXX) XXX-XXX or XXX-XXX-XXXX" required pattern="^\(\d{3}\)\s\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$" value={visitData.phone} onChange={(e) => setVisitData({ ...visitData, phone: e.target.value})}/>
+                <input name="phone" id="phone" type="tel" placeholder="Mobile Phone Number XXX-XXX-XXXX" required pattern="^\(\d{3}\)\s\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$" value={visitData.phone} onChange={(e) => setVisitData({ ...visitData, phone: e.target.value})}/>
             </div>
             <div>
                 <input name="email" id="email" type="email" placeholder="Email" required value={visitData.email} onChange={(e) => setVisitData({ ...visitData, email: e.target.value})}/>
             </div>
 
             <div>
+                <br />
                 <label htmlFor="reason">Help us prepare for your arrival</label> 
                 <select name="reason" id="reason" required value={visitData.reason} onChange={(e) => setVisitData({ ...visitData, reason: e.target.value})}>
                     <option value="">Reason for visit</option>
@@ -120,9 +123,10 @@ export default function Form({ currentId, setCurrentId }) {
             </div>
 
             <div className="flex-row">
+                <br />
                 <input name="terms" type="checkbox" required/>
                 <label htmlFor="terms" style={{ fontSize: "15px" }}>I agree to the&nbsp;<a href="#">Terms of Use</a>.</label>
-                <button className="button" id="submit" type='submit'>Submit</button>
+                <button className="button" id="submit" >Submit</button>
                 <button className="button" id="submit" onClick={clear}>Clear</button>
             </div>
             <br />

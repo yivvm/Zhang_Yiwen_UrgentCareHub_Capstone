@@ -7,6 +7,7 @@
     width: 100%;
     background-color: #ffffff; /* Add your desired background color */
     z-index: 1000;
+    color: #03045E;
 }
 
 .Nav ul {
@@ -30,4 +31,28 @@
 .Nav ul li a:hover {
     color: #023E8A;
     font-weight: bold;
+}
+
+/* --- TODO: for topmenu/ submenu later ------------ */
+header, #top-menu {
+    position: relative;
+}
+  
+  #top-menu {
+    z-index: 20;
+}
+
+#sub-menu {
+    width: 100%;
+    z-index: 10;
+    transition: top 0.5s ease-out;
+}
+  
+#sub-menu a:hover {
+    background-color: var(--top-menu-bg);
+}
+
+nav a.active {
+    background-color: var(--sub-menu-bg);
+    color: var(--main-bg);
 }
