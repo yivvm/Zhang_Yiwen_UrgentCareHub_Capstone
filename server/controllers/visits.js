@@ -26,23 +26,31 @@ export const createVisit = async (req, res) => {
     otherReason,
   } = req.body;
 
-  const newVisit = new ScheduledVisits({
-    date,
-    time,
-    firstName,
-    lastName,
-    dateOfBirth,
-    gender,
-    phone,
-    email,
-    reason,
-    otherReason,
-  });
+  console.log("Request Body:", req.body); // consoled
 
   try {
-    await newVisit.save();
+    const dateOfBirthDate = new Date(dateOfBirth);
 
-    res.status(201).json(newVisit);
+    const newVisit = new ScheduledVisits({
+      date: new Date(date),
+      time,
+      firstName,
+      lastName,
+      dateOfBirth: dateOfBirthDate,
+      gender,
+      phone,
+      email,
+      reason,
+      otherReason,
+    });
+
+    console.log("New Visit:", newVisit); // consoled
+
+    const savedVisit = await newVisit.save();
+
+    console.log("Saved Visit:", savedVisit); // nothing
+
+    res.status(201).json(savedVisit);
   } catch (error) {
     res.status(409).json({ message: error.message });
   }

@@ -3,7 +3,7 @@ import axios from "axios";
 const url = "http://localhost:5100/visits";
 
 export const fetchVisits = () => axios.get(url);
-export const createVisit = (newPost) => axios.post(url, newVisit);
+export const createVisit = (newVisit) => axios.post(url, newVisit);
 // export const likePost = (id) => axios.patch(`${url}/${id}/likePost`);
 export const updateVisit = (id, updatedVisit) =>
   axios.patch(`${url}/${id}`, updatedVisit);

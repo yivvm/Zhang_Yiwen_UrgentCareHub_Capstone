@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from'react-redux'
 
-// import { createPost, updatePost } from '../../actions/posts.js'
+import { createVisit, updateVisit } from '../../actions/visits.js'
 
-export default function Form({}) {
+export default function Form({ currentId, setCurrentId }) {
     const [visitData, setVisitData] = useState({
         date: "",
         time: "",
@@ -17,17 +17,28 @@ export default function Form({}) {
         otherReason: "",
     })
 
-    const handleSubmit = () => {
+    const dispatch = useDispatch()
 
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        // if (currentId === 0) {
+          dispatch(createVisit(visitData));
+          console.log("New Visit Data:", visitData);
+        //   clear();
+        // } else {
+        //   dispatch(updateVisit(currentId, visitData));
+        //   clear();
+        // }
+      };
 
     const clear = () => {
         // setCurrentId(0);
-        setPostData({ date: "", time: "", firstName: "", lastName: "", dateOfBirth: "", gender: "", phone: "", email: "",reason: "", otherReason: "", });
+        // setVisitData({ date: "", time: "", firstName: "", lastName: "", dateOfBirth: "", gender: "", phone: "", email: "",reason: "", otherReason: "", });
       };
 
   return (
-    <form className='schedule-form' onSubmit={handleSubmit}>
+    <form className='schedule-form' action='/api/visits' method='POST' onSubmit={handleSubmit}>
         {/* middle section */}
         <div className='time-date'>
             <p>Please provide the date and time that the patient wants to schedule.</p>
@@ -104,11 +115,11 @@ export default function Form({}) {
             </div>
 
             <div>
-                <label for="other">Other Reasons</label>
+                <label htmlFor="other">Other Reasons</label>
                 <input type="text" name="other" placeholder="Please let us know ..." value={visitData.otherReason} onChange={(e) => setVisitData({ ...visitData, otherReason: e.target.value})}/>
             </div>
 
-            <div class="flex-row">
+            <div className="flex-row">
                 <input name="terms" type="checkbox" required/>
                 <label htmlFor="terms" style={{ fontSize: "15px" }}>I agree to the&nbsp;<a href="#">Terms of Use</a>.</label>
                 <button className="button" id="submit" type='submit'>Submit</button>

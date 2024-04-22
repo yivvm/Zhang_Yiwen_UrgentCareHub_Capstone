@@ -7,22 +7,24 @@ if (process.env.NODE_ENV != "production") {
 // import dependencies
 import express from "express";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 import connectToDb from "./config/connectToDb.js";
 // const cookieParser = require("cookie-parser");
 
 import visitRoutes from "./routes/visits.js";
 
-// const notesController = require("./controllers/notesController");
-// const usersController = require("./controllers/usersController");
-// const requireAuth = require("./middleware/requireAuth");
-
 // create express app
 const app = express();
+
+// Connect to database
+connectToDb();
 
 // Configure express app
 app.use(express.json());
 app.use(express.json({ limit: "30mb" }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 // app.use(cookieParser());
 app.use(
   cors({
@@ -32,9 +34,6 @@ app.use(
 );
 
 app.use("/visits", visitRoutes);
-
-// Connect to database
-connectToDb();
 
 // Routing
 app.get("/", (req, res) => {
@@ -51,8 +50,6 @@ app.get("/", (req, res) => {
 // app.post("/notes", notesController.createNote);
 // app.put("/notes/:id", notesController.updateNote);
 // app.delete("/notes/:id", notesController.deleteNote);
-
-// Add requireAuth after login works: https://www.youtube.com/watch?v=jcckC--ibmM&list=PL-LRDpVN2fZA-1igOQ6PDcqfBjS-vaC7w&index=7
 
 // Start our server
 app.listen(process.env.PORT, () =>
