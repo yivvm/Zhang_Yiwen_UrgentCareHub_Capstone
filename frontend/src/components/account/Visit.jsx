@@ -1,7 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+// import moment from 'moment'
 
-export default function Visit({ visit}) {
+import { deleteVisit } from '../../actions/visits.js'
+
+export default function Visit({ visit, setCurrentId }) {
   const dispatch = useDispatch()
 
   return (
@@ -15,10 +18,10 @@ export default function Visit({ visit}) {
       <div>{visit.phone}</div>
       <div>{visit.email}</div>
       <div>
-        <button className="button" onClick={() => dispatch({ type: 'UPDATE_VISIT', id: visit._id })}>
+        <button className="button" onClick={() => setCurrentId(visit._id)}>
           Edit or reschedule 
         </button>
-        <button className='button' onClick={() => dispatch({ type: 'DELETE_VISIT', id: visit._id })}>
+        <button className='button' onClick={() => dispatch(deleteVisit(visit._id))}>
           Cancel
         </button>
       </div>

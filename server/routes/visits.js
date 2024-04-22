@@ -1,10 +1,10 @@
 import express from "express";
 import {
   getVisits,
-  //   getVisit,
+  getVisit,
   createVisit,
-  //   updateVisit,
-  //   deleteVisit,
+  updateVisit,
+  deleteVisit,
 } from "../controllers/visits.js";
 
 const router = express.Router();
@@ -16,8 +16,8 @@ const router = express.Router();
 
 router.get("/", getVisits);
 router.post("/", createVisit);
-// router.get("/:id", getVisit);
-// router.patch("/:id", updateVisit);
-// router.delete("/:id", deleteVisit);
+router.get("/:id", getVisit);
+router.patch("/:id", updateVisit);
+router.delete("/:id", deleteVisit);
 
 export default router;
