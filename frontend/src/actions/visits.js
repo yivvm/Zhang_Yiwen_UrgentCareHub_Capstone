@@ -17,11 +17,11 @@ export const getVisits = () => async (dispatch) => {
 export const createVisit = (visit) => async (dispatch) => {
   try {
     const { data } = await api.createVisit(visit);
-
+    console.log("Data from actions/visits: ", data);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     if (error.response && error.response.status === 409) {
-      console.log("Visit already exists."); // Log the error
+      console.log("Visit already exists.", error.message); // Log the error
       // Dispatch an action to set an error state in Redux or show an error message
     } else {
       console.log("Error creating visit:", error.message);

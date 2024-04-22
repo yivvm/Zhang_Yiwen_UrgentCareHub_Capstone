@@ -3,20 +3,20 @@ import validator from "validator";
 
 const visitSchema = mongoose.Schema({
   date: {
-    type: Date,
+    type: String,
     required: true,
     default: Date.now,
   },
   time: {
     type: String,
     required: true,
-    validate: {
-      validator: function (value) {
-        return /^(0?[1-9]|1[0-2]):([0-5]\d) ?([APap][mM])$/.test(value);
-      },
-      message: (props) =>
-        `${props.value} is not a valid time format. Use HH:MM AM/PM.`,
-    },
+    // validate: {
+    //   validator: function (value) {
+    //     return /^(0?[1-9]|1[0-2]):([0-5]\d) ?([APap][mM])$/.test(value);
+    //   },
+    //   message: (props) =>
+    //     `${props.value} is not a valid time format. Use HH:MM AM/PM.`,
+    // },
   },
   firstName: {
     type: String,
@@ -27,7 +27,7 @@ const visitSchema = mongoose.Schema({
     required: true,
   },
   dateOfBirth: {
-    type: Date,
+    type: String,
     required: true,
   },
   gender: {
@@ -48,6 +48,7 @@ const visitSchema = mongoose.Schema({
       },
       message: "Please enter a valid email address.",
     },
+    // unique: false,
   },
   reason: {
     type: String,

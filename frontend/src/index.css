@@ -1,12 +1,5 @@
 * {
     box-sizing: border-box;
-}
-
-body {
-  font-family: Geneva, sans-serif, Arial, Helvetica ;
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  grid-template-rows: 3rem auto;
-  color: black;
+    /* padding: 0; */
+    /* margin: 0; */
 }

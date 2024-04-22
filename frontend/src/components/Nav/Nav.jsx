@@ -7,10 +7,11 @@ export default function Nav() {
     <nav className='Nav'>
       <ul>
         <li>
-            <Link to="/">Find a Doctor</Link>
+          <Link to="/">Home</Link>
+          {/* <Link to="/departments">Departments</Link> */}
         </li>
         <li>
-            <Link to="/departments">Departments</Link>
+          <Link to="/doctors">Find a Doctor</Link>
         </li>
         <li>
             <Link to="/schedule">Schedule Appointment Online</Link>

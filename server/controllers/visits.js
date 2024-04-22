@@ -26,7 +26,7 @@ export const createVisit = async (req, res) => {
     otherReason,
   } = req.body;
 
-  console.log("Request Body:", req.body); // consoled
+  // console.log("Request Body:", req.body); // logged
 
   try {
     const dateOfBirthDate = new Date(dateOfBirth);
@@ -44,11 +44,11 @@ export const createVisit = async (req, res) => {
       otherReason,
     });
 
-    console.log("New Visit:", newVisit); // consoled
+    // console.log("New Visit:", newVisit); // logged
 
     const savedVisit = await newVisit.save();
 
-    console.log("Saved Visit:", savedVisit); // nothing
+    // console.log("Saved Visit:", savedVisit); // logged
 
     res.status(201).json(savedVisit);
   } catch (error) {

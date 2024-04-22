@@ -1,0 +1,146 @@
+.Home {
+    width: 100%;
+    flex-direction: row;
+    display: flex;
+    /* margin: 3rem 0; */
+}
+
+.departments-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+    flex: 1;
+    margin: 1rem;
+    font-size: 2rem;
+    /* box-shadow: 0 0 5px 2px rgba(3, 1, 64, 0.3); */
+}
+
+.doctors-cards {
+    flex: 4;
+    padding: 0 1rem 0 0;
+}
+
+button {
+    width: 100%;
+    background-color: darkblue;
+    color: white;
+    padding: 1em 1.5em;
+    /* border-radius: .2em; */
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+button:hover {
+    background-color: rgb(50, 50, 137);
+}
+
+.results {
+    padding: 15px 10px;
+    background-color: rgb(77, 77, 201);
+    color: white;
+    font-size: 1rem;
+}
+
+.results > p {
+    padding: 10px;
+}
+
+.results > p > strong {
+    font-size: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+}
+
+.form-group > label {
+    color: #777;
+    font-size: .8rem;
+    margin-bottom: .25rem;
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); */
+    gap: 1rem;
+    padding-top: 1rem;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border-radius: .25rem; */
+    box-shadow: 0 0 5px 2px rgba(3, 1, 64, 0.1);
+    background-color: white;
+    transform-style: preserve-3d;
+    height: 280px;
+    width: 200px;
+    transition: 150ms;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+}
+
+.card:hover { 
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+.card.flip {
+    --rotate-y: 180deg;
+}
+
+/* .card .front {
+    left: 0;
+} */
+
+.card .front,
+.card .back {
+    position: absolute;
+    padding: 1.5rem;
+    backface-visibility: hidden;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+.card .back {
+    transform: rotateY(180deg);
+}
+
+.card-departments {
+    margin-top: .5rem;
+}
+
+.card-department {
+    margin-top: 0.25rem;
+    color: #555;
+    font-size: .8rem;
+}
+
+.card-department:first-child {
+    margin-top: 0;
+}
+
+.image-container {
+    width: 60%;
+    height: 60%;
+    max-width: 150px;
+    max-height: 150px;
+    text-align: center;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}

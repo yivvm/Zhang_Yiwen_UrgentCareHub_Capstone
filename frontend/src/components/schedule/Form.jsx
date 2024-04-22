@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from'react-redux'
 
 import { createVisit, updateVisit } from '../../actions/visits.js'
 
+import axios from 'axios';
+
 export default function Form({ currentId, setCurrentId }) {
     const [visitData, setVisitData] = useState({
         date: "",
@@ -22,9 +24,15 @@ export default function Form({ currentId, setCurrentId }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
+        // console.log("New Visit Data in the Form:", visitData);
+
+        // #region Regular Axios
+        // const url = "http://localhost:5100/visits"
+        // await axios.post(url, visitData)
+        // #endregion
+
         // if (currentId === 0) {
-          dispatch(createVisit(visitData));
-          console.log("New Visit Data:", visitData);
+        dispatch(createVisit(visitData));
         //   clear();
         // } else {
         //   dispatch(updateVisit(currentId, visitData));
@@ -45,7 +53,7 @@ export default function Form({ currentId, setCurrentId }) {
             <div>
                 <label htmlFor="scheduleddate">Schedule On</label>
                 <input name="scheduleddate" type="date" placeholder="MM/DD/YYYY" required id="scheduleddate" value={visitData.date} onChange={(e) => setVisitData({ ...visitData, date: e.target.value})}/>
-                <input type="time" name="time" id="time" required value={visitData.time} onChange={(e) => setVisitData({ ...visitData, time: e.target.value})}/>
+                <input type="time" name="time" id="time" required value={visitData.time} onChange={(e) => setVisitData({ ...visitData, time: e.target.value.toString()})}/>
             </div>
         </div>
 

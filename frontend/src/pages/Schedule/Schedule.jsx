@@ -14,7 +14,7 @@ export default function Schedule() {
 
   return (
     <div className='schedule-page'>
-      {/* <h1>Schedule Appointment Online</h1> */}
+      <h1>Schedule Appointment Online</h1>
       <div className='row'>
         {/* left section, 1/3 */}
         <div className='location'>
