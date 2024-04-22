@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 // import moment from 'moment'
 
-import { deleteVisit } from '../../actions/visits.js'
+import { updateVisit, deleteVisit } from '../../actions/visits.js'
 
 export default function Visit({ visit, setCurrentId }) {
   const dispatch = useDispatch()

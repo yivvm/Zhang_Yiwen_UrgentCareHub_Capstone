@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 export const getVisits = async (req, res) => {
   try {
     const scheduledVisits = await ScheduledVisits.find();
-    console.log(scheduledVisits);
+    // console.log(scheduledVisits);
 
     res.status(200).json(scheduledVisits);
   } catch (error) {
@@ -22,7 +22,7 @@ export const getVisit = async (req, res) => {
       return res.status(404).json({ message: "Visit not found" });
     }
 
-    console.log(visit);
+    // console.log(visit);
 
     res.status(200).json(visit);
   } catch (error) {

@@ -19,7 +19,13 @@ export default function Form({ currentId, setCurrentId }) {
         otherReason: "",
     })
 
+    const visit = useSelector((state) => (currentId ? state.visits.find((visit) => visit._id === currentId) : null ))
+
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (visit) setVisitData(visit)
+    }, [visit])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -31,18 +37,18 @@ export default function Form({ currentId, setCurrentId }) {
         // await axios.post(url, visitData)
         // #endregion
 
-        // if (currentId === 0) {
-        dispatch(createVisit(visitData));
-        //   clear();
-        // } else {
-        //   dispatch(updateVisit(currentId, visitData));
-        //   clear();
-        // }
+        if (currentId === 0) {
+            dispatch(createVisit(visitData));
+            clear();
+        } else {
+          dispatch(updateVisit(currentId, visitData));
+          clear();
+        }
       };
 
     const clear = () => {
-        // setCurrentId(0);
-        // setVisitData({ date: "", time: "", firstName: "", lastName: "", dateOfBirth: "", gender: "", phone: "", email: "",reason: "", otherReason: "", });
+        setCurrentId(0);
+        setVisitData({ date: "", time: "", firstName: "", lastName: "", dateOfBirth: "", gender: "", phone: "", email: "",reason: "", otherReason: "", });
       };
 
   return (
@@ -51,8 +57,10 @@ export default function Form({ currentId, setCurrentId }) {
         <div className='time-date'>
             <p>Please provide the date and time that the patient wants to schedule.</p>
             <div>
+                <br />
                 <label htmlFor="scheduleddate">Schedule On</label>
                 <input name="scheduleddate" type="date" placeholder="MM/DD/YYYY" required id="scheduleddate" value={visitData.date} onChange={(e) => setVisitData({ ...visitData, date: e.target.value})}/>
+                <label htmlFor="scheduledtime">Schedule Time</label>
                 <input type="time" name="time" id="time" required value={visitData.time} onChange={(e) => setVisitData({ ...visitData, time: e.target.value.toString()})}/>
             </div>
         </div>
@@ -61,6 +69,7 @@ export default function Form({ currentId, setCurrentId }) {
         <div className='info'>
             <p>Please provide some information about the patient.</p>
             <div>
+                <br />
                 <label htmlFor="firstname">Legal First Name</label>
                 <input name="firstname" type="text" placeholder="Legal First Name" required id="firstname" value={visitData.firstName} onChange={(e) => setVisitData({ ...visitData, firstName: e.target.value})}/>
             </div>

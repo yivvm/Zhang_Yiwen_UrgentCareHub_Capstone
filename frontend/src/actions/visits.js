@@ -17,7 +17,8 @@ export const getVisits = () => async (dispatch) => {
 export const createVisit = (visit) => async (dispatch) => {
   try {
     const { data } = await api.createVisit(visit);
-    console.log("Data from actions/visits: ", data);
+
+    // console.log("Data from actions/visits: ", data);
     dispatch({ type: CREATE, payload: data });
   } catch (error) {
     if (error.response && error.response.status === 409) {
@@ -49,55 +50,3 @@ export const deleteVisit = (id) => async (dispatch) => {
     console.log(error.message);
   }
 };
-
-// export const getPosts = () => async (dispatch) => {
-//   try {
-//     const { data } = await api.fetchPosts();
-
-//     dispatch({ type: FETCH_ALL, payload: data });
-//     // const action = { type: "FETCH_ALL", payload: data };
-//     // dispatch(action);
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// export const createPost = (post) => async (dispatch) => {
-//   try {
-//     const { data } = await api.createPost(post);
-
-//     dispatch({ type: CREATE, payload: data });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
-// export const updatePost = (id, post) => async (dispatch) => {
-//   try {
-//     const { data } = await api.updatePost(id, post);
-
-//     dispatch({ type: UPDATE, payload: data });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// export const likePost = (id) => async (dispatch) => {
-//   try {
-//     const { data } = await api.likePost(id);
-
-//     dispatch({ type: LIKE, payload: data });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };
-
-// export const deletePost = (id) => async (dispatch) => {
-//   try {
-//     await api.deletePost(id);
-
-//     dispatch({ type: DELETE, payload: id });
-//   } catch (error) {
-//     console.log(error.message);
-//   }
-// };

@@ -1,16 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-// import { getVisits } from '../../actions/visits.js'
+import { getVisits } from '../../actions/visits.js'
 
 import Form from '../../components/schedule/Form'
 import './schedule.css'
 
-export default function Schedule() {
-  // const dispatch = useDispatch()
+export default function Schedule({ currentId, setCurrentId }) {
+  // const [currentId, setCurrentId] = useState(0)
 
-  // useEffect(() => {
-  //   dispatch(getVisits())
-  // }, [dispatch])
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getVisits())
+  }, [dispatch])
 
   return (
     <div className='schedule-page'>
@@ -38,7 +40,7 @@ export default function Schedule() {
 
         {/* middle and right sections, 2/3 */}
         <div className='schedule'>
-          <Form />
+          <Form currentId={currentId} setCurrentId={setCurrentId}/>
         </div>
       </div>
     </div>

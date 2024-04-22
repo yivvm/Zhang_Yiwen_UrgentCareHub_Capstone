@@ -40,16 +40,7 @@ app.get("/", (req, res) => {
   res.json({ hello: "Hello!" });
 });
 
-// app.post("/signup", usersController.signup);
-// app.post("/login", usersController.login);
-// app.get("/logout", usersController.logout);
-// app.get("/check-auth", requireAuth, usersController.checkAuth);
-
-// app.get("/notes", notesController.fetchNotes);
-// app.get("/notes/:id", notesController.fetchNote);
-// app.post("/notes", notesController.createNote);
-// app.put("/notes/:id", notesController.updateNote);
-// app.delete("/notes/:id", notesController.deleteNote);
+// --- TODO: signup, login, login authentication ------ //
 
 // Start our server
 app.listen(process.env.PORT, () =>

@@ -11,10 +11,12 @@ import Schedule from './pages/Schedule/Schedule';
 // import About from './pages/About/About'
 //#endregion
 
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom' 
 
 //#region Functional Components
 function App() {
+  const [currentId, setCurrentId] = useState(0)
 
   return (
     <div className='App'>
@@ -24,8 +26,8 @@ function App() {
         {/* <Route path='/' element={<Home />} /> */}
         {/* <Route path='/departments' element={<Departments />} /> */}
         <Route path='/doctors' element={<Doctors />} />
-        <Route path='/schedule' element={<Schedule />} />
-        <Route path='/account' element={<Account />} />
+        <Route path='/schedule' element={<Schedule currentId={currentId} setCurrentId={setCurrentId}/>} />
+        <Route path='/account' element={<Account setCurrentId={setCurrentId}/>} />
       </Routes>
 
     </div>

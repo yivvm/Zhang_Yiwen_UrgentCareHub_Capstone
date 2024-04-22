@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import Visit from './Visit'
 
-export default function Visits() {
+export default function Visits({ setCurrentId}) {
   const visits = useSelector(state => state.visits)
 
   console.log(visits)
