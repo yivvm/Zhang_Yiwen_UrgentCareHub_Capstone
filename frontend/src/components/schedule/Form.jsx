@@ -77,7 +77,7 @@ export default function Form({ currentId, setCurrentId }) {
 
             <div>
                 <label htmlFor="legalsex">Legal Sex</label>
-                <span style={{ fontSize: "10px", color: "grey" }}>(Your legal sex is what is listed on your ID.)</span>
+                <span style={{ fontSize: "10px", color: "grey" }}>  (Your legal sex is what is listed on your ID.)</span>
                 <br />
                 <input
                     type="radio"
@@ -134,6 +134,7 @@ export default function Form({ currentId, setCurrentId }) {
                 <br />
                 <input name="terms" type="checkbox" required/>
                 <label htmlFor="terms" style={{ fontSize: "15px" }}>I agree to the&nbsp;<a href="#">Terms of Use</a>.</label>
+                <br />
                 <button className="button" id="submit" >Submit</button>
                 <button className="button" id="submit" onClick={clear}>Clear</button>
             </div>

@@ -9,11 +9,13 @@ export default function Visits() {
   console.log(visits)
 
   return (
-    <div>
-      <h1>visitssssssssss</h1>
-      <Visit />
-      <Visit />
-      <Visit />
-    </div>
-  )
+    !visits.length ? (<h1>no upcoming visits</h1>) : (
+       <div className='cards-visits'>
+         {/* <h1>Visits</h1> */}
+         {visits.map((visit) => (
+           <Visit key={visit._id} visit={visit} />
+         ))}
+       </div>
+     )
+    )
 }

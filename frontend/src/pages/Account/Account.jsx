@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { getVisits } from '../../actions/visits.js'
 
 import Visits from '../../components/account/Visits'
+import './account.css'
 
 export default function Account() {
   const dispatch = useDispatch()
@@ -12,7 +13,7 @@ export default function Account() {
   }, [dispatch])
 
   return (
-    <div>
+    <div className='Home'>
       <h1>Upcoming Visits</h1>
       <div>
         <Visits />

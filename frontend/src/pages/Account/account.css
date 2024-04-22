@@ -1,0 +1,57 @@
+.Home {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    /* margin: 3rem 0; */
+    padding: 0 3rem;
+}
+
+.cards-visits {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1rem 0.3rem;
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+}
+
+.card-visit {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* border-radius: .25rem; */
+    box-shadow: 0 0 5px 2px rgba(3, 1, 64, 0.1);
+    background-color: white;
+    height: 280px;
+    width: 500px;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.card-visit:hover { 
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+}
+
+
+.button{
+    text-decoration: none;
+    margin: .2em;
+    /* padding: 1em 2.5em;  */
+    background-color: #023E8A; 
+    color: #fff; 
+    border-radius: 0.25em;
+    font-size: 16px;
+    
+    background-image: linear-gradient(75deg, #0466C8, #023E7D, #023E8A, #0353A4); 
+    background-size: 300% ;
+    background-position: left;
+    
+    transition: 300ms background-position ease-in-out;
+    cursor: pointer;
+  }
+  
+  .button:hover{
+    background-position: right; 
+    opacity: 0.8;
+  }
