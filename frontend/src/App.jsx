@@ -12,6 +12,7 @@ import Account from './pages/Account/Account';
 
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom' 
+import Footer from './components/Footer/Footer';
 
 //#region Functional Components
 function App() {
@@ -27,6 +28,8 @@ function App() {
         <Route path='/schedule' element={<Schedule />} />
         <Route path='/account' element={<Account />} />
       </Routes>
+
+      <Footer />
 
     </div>
   )

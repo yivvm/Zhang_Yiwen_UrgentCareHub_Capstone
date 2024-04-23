@@ -7,16 +7,17 @@
     width: 100%;
     background-color: #03045E; 
     z-index: 1000;
-    color: #EDF2FB;
+    color: #CCDBFD;
 }
 
 .Nav ul {
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    height: 50px;
+    height: 60px;
     list-style: none;
+    padding: 0;
 }
 
 .Nav ul li {
