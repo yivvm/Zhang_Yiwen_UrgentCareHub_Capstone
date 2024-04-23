@@ -5,8 +5,8 @@ import { getVisits } from '../../actions/visits.js'
 import Form from '../../components/schedule/Form'
 import './schedule.css'
 
-export default function Schedule({ currentId, setCurrentId }) {
-  // const [currentId, setCurrentId] = useState(0)
+export default function Schedule() {
+  const [currentId, setCurrentId] = useState(0)
 
   const dispatch = useDispatch()
 

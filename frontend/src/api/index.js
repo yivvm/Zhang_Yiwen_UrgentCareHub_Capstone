@@ -7,6 +7,7 @@ export const createVisit = (newVisit) => {
   // console.log("newVisit from api/index", newVisit);
   axios.post(url, newVisit);
 };
+export const fetchVisitDetails = (id) => axios.get(`${url}/${id}`);
 export const updateVisit = (id, updatedVisit) =>
   axios.patch(`${url}/${id}`, updatedVisit);
 export const deleteVisit = (id) => axios.delete(`${url}/${id}`);

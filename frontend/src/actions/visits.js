@@ -1,5 +1,15 @@
 import * as api from "../api";
-import { FETCH_ALL, CREATE, UPDATE, DELETE } from "../constants/actionTypes";
+import {
+  FETCH_ALL,
+  CREATE,
+  SET_VISIT_DETAILS,
+  UPDATE,
+  SET_EDITING_VISIT_ID,
+  VISIT_UPDATED,
+  DELETE,
+} from "../constants/actionTypes";
+
+// import { Navigate } from "react-router-dom";
 
 // Action Creators - functions that returns actions (type, payload)
 export const getVisits = () => async (dispatch) => {
@@ -31,14 +41,34 @@ export const createVisit = (visit) => async (dispatch) => {
   }
 };
 
+export const fetchVisitDetails = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.fetchVisitDetails(id);
+
+    dispatch({ type: SET_VISIT_DETAILS, payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const updateVisit = (id, visit) => async (dispatch) => {
   try {
     const { data } = await api.updateVisit(id, visit);
 
     dispatch({ type: UPDATE, payload: data });
+    dispatch({ type: VISIT_UPDATED }); // Dispatch visit update action
+    // navigate("/account");
+    return data;
   } catch (error) {
     console.log(error.message);
   }
+};
+
+export const setEditingVisitId = (id) => {
+  return {
+    type: SET_EDITING_VISIT_ID,
+    payload: id,
+  };
 };
 
 export const deleteVisit = (id) => async (dispatch) => {

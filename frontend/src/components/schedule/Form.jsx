@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from'react-redux'
 
 import { createVisit, updateVisit } from '../../actions/visits.js'
 
-import axios from 'axios';
+// import axios from 'axios';
 
 export default function Form({ currentId, setCurrentId }) {
     const [visitData, setVisitData] = useState({
@@ -47,7 +47,7 @@ export default function Form({ currentId, setCurrentId }) {
       };
 
     const clear = () => {
-        setCurrentId(0);
+        // setCurrentId(0);
         setVisitData({ date: "", time: "", firstName: "", lastName: "", dateOfBirth: "", gender: "", phone: "", email: "",reason: "", otherReason: "", });
       };
 
@@ -55,7 +55,7 @@ export default function Form({ currentId, setCurrentId }) {
     <form className='schedule-form' action='/api/visits' method='POST' onSubmit={handleSubmit}>
         {/* middle section */}
         <div className='time-date'>
-            <p>Please provide the date and time that the patient wants to schedule.</p>
+            <p>Please schedule the preferred date and time.</p>
             <div>
                 <br />
                 <label htmlFor="scheduleddate">Schedule On</label>

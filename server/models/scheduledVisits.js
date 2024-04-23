@@ -3,7 +3,7 @@ import validator from "validator";
 
 const visitSchema = mongoose.Schema({
   date: {
-    type: String,
+    type: Date,
     required: true,
     default: Date.now,
   },
@@ -27,7 +27,7 @@ const visitSchema = mongoose.Schema({
     required: true,
   },
   dateOfBirth: {
-    type: String,
+    type: Date,
     required: true,
   },
   gender: {
