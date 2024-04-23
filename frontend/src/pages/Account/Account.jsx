@@ -47,8 +47,8 @@ export default function Account() {
 
     setUpcomingVisits(upcoming)
     setPastVisits(past)
-    console.log('upcomingVisits: ', upcomingVisits.length)
-    console.log('pastVisits: ', pastVisits.length)
+    // console.log('upcomingVisits: ', upcomingVisits.length)
+    // console.log('pastVisits: ', pastVisits.length)
   }
 
   useEffect(() => {
@@ -65,9 +65,9 @@ export default function Account() {
       <div>
         {editingVisitId ? (
           <EditVisitForm />
-        ) : (
-          <Visits visits={upcomingVisits} />
-        )}
+        ) : ( <></> )}
+
+        <Visits visits={upcomingVisits} />
       </div>
 
       <h1>Past Visits</h1>

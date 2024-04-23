@@ -1,0 +1,42 @@
+.visit-content {
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-between; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0;
+}
+
+.visit-date-time {
+    padding: 0 2.5rem 0 2rem;
+}
+
+.day {
+    margin-top: 0;
+    color: #0466C8;
+}
+
+.year {
+    color: #0466C8
+}
+
+.time {
+    margin-bottom: 2rem;
+    color: #023E8A;
+}
+
+.visit-info > div {
+    /* font-size: 1rem; */
+    padding: 0.1rem 0;
+}
+
+.name {
+    margin-top: 0.4rem;
+}
+
+.email {
+    margin-bottom: 0.2rem;
+}
+
+.visit-btn {
+    margin-left: 1.5rem;
+}

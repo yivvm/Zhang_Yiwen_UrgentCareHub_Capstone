@@ -36,6 +36,10 @@
     list-style: none;
 }
 
+.div-footer-me {
+    padding-right: 2rem;
+}
+
 .div-footer-me ul li a {
     color: #EDF2FB;
 }

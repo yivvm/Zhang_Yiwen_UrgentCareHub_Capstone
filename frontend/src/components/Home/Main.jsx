@@ -9,8 +9,8 @@ export default function Main() {
       
       <div className='row-main'>
         <div className='div-button1'>
-            <Link to='/schedule'>
-                Schedule Appointments Online
+            <Link to='/'>
+                Find a Location
             </ Link>
         </div>
         <div className='div-button2'>
@@ -19,8 +19,8 @@ export default function Main() {
             </ Link>
         </div>
         <div className='div-button3'>
-            <Link to='/'>
-                Find a Location
+            <Link to='/schedule'>
+                Schedule Appointments Online
             </ Link>
         </div>
         <div className='div-button4'>

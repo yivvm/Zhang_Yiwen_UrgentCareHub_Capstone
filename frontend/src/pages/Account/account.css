@@ -28,8 +28,9 @@
     background-color: white;
     height: 280px;
     width: 500px;
-    padding: 2rem;
+    padding: 1.8rem 2rem;
     cursor: pointer;
+    
 }
 
 .card-visit:hover { 

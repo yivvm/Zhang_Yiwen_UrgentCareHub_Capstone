@@ -124,13 +124,13 @@ export default function Form({ currentId, setCurrentId }) {
                 <label htmlFor="reason">Help us prepare for your arrival</label> 
                 <select name="reason" id="reason" required value={visitData.reason} onChange={(e) => setVisitData({ ...visitData, reason: e.target.value})}>
                     <option value="">Reason for visit</option>
-                    <option value="pediatrician">Pediatrics</option>
-                    <option value="illness">Illness</option>
-                    <option value="injury">Injury</option>
-                    <option value="wound">Wound/Laceration</option>
-                    <option value="testing">Testing onsite</option>
-                    <option value="DOT physicals">DOT physicals</option>
-                    <option value="others">Others</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Illness">Illness</option>
+                    <option value="Injury">Injury</option>
+                    <option value="Wound">Wound/Laceration</option>
+                    <option value="Testing">Testing onsite</option>
+                    <option value="DOT Physicals">DOT physicals</option>
+                    <option value="Others">Others</option>
                 </select>
             </div>
 
