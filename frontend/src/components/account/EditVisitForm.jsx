@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 
 import { updateVisit } from '../../actions/visits.js';
-import { VISIT_UPDATED } from '../../constants/actionTypes';
+import { VISIT_UPDATED } from '../../constants/actionTypes.js';
 
 export default function EditVisitForm() {
   const editingVisitId = useSelector((state) => state.visits.editingVisitId);
@@ -139,7 +139,7 @@ export default function EditVisitForm() {
           value={formData.otherReason}
           onChange={handleInputChange}
         />
-        <button type="submit">Save Changes</button>
+        <button type="submit" className='edit-btn'>Save Changes</button>
       </form>
     </div>
   );

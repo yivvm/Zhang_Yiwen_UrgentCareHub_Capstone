@@ -2,8 +2,12 @@
     width: 100%;
     flex-direction: column;
     display: flex;
-    /* margin: 3rem 0; */
+    margin: 3rem 0;
     padding: 0 3rem;
+} 
+
+.Account > h1 {
+    margin-top: 3rem;
 }
 
 .cards-visits {
@@ -33,3 +37,21 @@
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
 }
 
+.edit-btn {
+    background-image: linear-gradient(75deg, #0466C8, darkblue, darkblue, #0353A4);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25em;
+    font-size: 16px;
+    border: 0;
+    /* background-size: 300% ; */
+    background-position: left;
+    
+    transition: 300ms background-position ease-in-out;
+    cursor: pointer;
+}
+
+.edit-btn:hover{
+    background-position: right; 
+    opacity: 0.9;
+}

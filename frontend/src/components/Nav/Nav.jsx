@@ -14,7 +14,7 @@ export default function Nav() {
           <Link to="/doctors">Find a Doctor</Link>
         </li>
         <li>
-            <Link to="/schedule">Schedule Appointment Online</Link>
+            <Link to="/schedule">Schedule Appointments Online</Link>
         </li>
         <li>
             <Link to="/account">My Health Account</Link>

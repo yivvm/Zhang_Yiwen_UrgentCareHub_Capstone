@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
+import UserHeader from '../../components/account/UserHeader.jsx'
+
 import { getVisits, setEditingVisitId } from '../../actions/visits.js'
-import Visits from '../../components/account/Visits'
-import EditVisitForm from '../../components/account/EditVisitForm';
+import Visits from '../../components/account/Visits.jsx'
+import EditVisitForm from '../../components/account/EditVisitForm.jsx';
 import './account.css'
 
 export default function Account() {
@@ -24,6 +26,7 @@ export default function Account() {
 
   return (
     <div className='Account'>
+      <UserHeader />
       <h1>Upcoming Visits</h1>
       <div>
         {editingVisitId ? (

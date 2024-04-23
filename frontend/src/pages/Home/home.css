@@ -1,0 +1,58 @@
+.hero {
+    margin: 3rem 0;;
+}
+
+.main {
+    margin: 3rem;
+}
+
+.row-main {
+    display: flex;
+    height: auto;
+    min-width: auto;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0;
+    margin: auto;
+}
+
+.row-main > div > a {
+    /* border: 1px solid black; */
+    text-decoration: none;
+    color: black
+}
+
+.div-button1 {
+    background-color: #CCDBFD;
+    padding: 4rem 2rem;
+    border-radius: .25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.div-button2 {
+    background-color: #C1D3FE;
+    padding: 4rem 2rem;
+    border-radius: .25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.div-button3 {
+    background-color: #B6CCFE;
+    padding: 4rem 2rem;
+    border-radius: .25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.div-button4 {
+    background-color: #ABC4FF;
+    padding: 4rem 2rem;
+    border-radius: .25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

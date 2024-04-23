@@ -1,6 +1,6 @@
 const departmentMappings = {
   normal: "Urgent Care",
-  fighting: "Neurology",
+  fighting: "Pediatrics",
   flying: "Obstetrics & Gynecology",
   poison: "Dermatology",
   ground: "Orthopaedics",
@@ -10,7 +10,7 @@ const departmentMappings = {
   steel: "Family Medicine",
   fire: "Infectious Diseases",
   water: "Orthopaedics",
-  grass: "Pediatrics",
+  grass: "Neurology",
   electric: "Psychiatry & Psychology",
   psychic: "Sports Medicine",
   ice: "Urology",

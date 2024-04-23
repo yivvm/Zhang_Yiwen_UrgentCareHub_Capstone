@@ -1,13 +1,15 @@
 .user-header {
     box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
     position: fixed;
+    /* height: 2rem; */
     top: 0;
     left: 0;
     width: 100%;
     background-color: #ffffff; /* Add your desired background color */
     z-index: 1000;
     color: #03045E;
-    margin: 6rem 0;
+    margin: 5.2rem 0;
+    padding: 0 .5rem;
 }
 
 .user-header ul {
@@ -15,20 +17,39 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 50px;
+    height: 30px;
 }
 
 .user-header ul li {
     list-style: none;
+    padding: 0 3rem 0 0;
 }
 
 .user-header ul li a {
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
+    color: #03045E;
 }
 
 .user-header ul li a:hover {
-    color: #023E8A;
+    color: #023E7D;
     font-weight: bold;
+}
+
+.user-header ul li:last-child {
+  margin-right: 0; /* Remove margin from the last list item */
+  padding: 2.5rem;
+}
+
+.user-header ul li p {
+  margin: 0; /* Remove default margin for the paragraph */
+}
+
+.user {
+    color: #03045E;
+}
+
+.user-header ul li:last-child {
+  margin-left: auto; /* Pushes the last item to the right */
 }

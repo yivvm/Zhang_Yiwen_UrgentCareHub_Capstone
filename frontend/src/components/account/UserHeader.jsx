@@ -21,7 +21,7 @@ export default function UserHeader() {
             <Link to="/">More</Link>
         </li>
         <li>
-            <p>User: Admin</p>
+            <p className='user'>User: Admin</p>
         </li>
       </ul>
     </div>
