@@ -9,7 +9,8 @@ import EditVisitForm from '../../components/account/EditVisitForm.jsx';
 import './account.css'
 
 export default function Account() {
-  // const [currentId, setCurrentId] = useState(null)
+  const [upcomingVisits, setUpcomingVisits] = useState([]);
+  const [pastVisits, setPastVisits] = useState([]);
 
   const visits = useSelector(state => state.visits.visits);
   const editingVisitId = useSelector((state) => state.visits.editingVisitId);
@@ -24,18 +25,55 @@ export default function Account() {
     dispatch(setEditingVisitId(null)); // Reset editing visit ID
   };
 
+  //#region FILTER VISITS BY DATE+TIME
+  // Function to combine date and time into a single Date object
+  const combineDateTime = (dateStr, timeStr) => {
+    const [year, month, day] = dateStr.substring(0, 10).split('-').map(Number);
+    const [hours, minutes] = timeStr.split(':').map(Number);
+
+    return new Date(year, month - 1, day, hours, minutes);
+  };
+
+  // Function to filter visits
+  const filterVisits = () => {
+    const now = new Date(); // Current local time
+    // console.log(now)
+
+    const upcoming = visits.filter(visit => {
+      console.log('time', combineDateTime(visit.date, visit.time))
+      return combineDateTime(visit.date, visit.time) >= now
+    })
+    const past = visits.filter(visit => combineDateTime(visit.date, visit.time) < now)
+
+    setUpcomingVisits(upcoming)
+    setPastVisits(past)
+    console.log('upcomingVisits: ', upcomingVisits.length)
+    console.log('pastVisits: ', pastVisits.length)
+  }
+
+  useEffect(() => {
+    filterVisits();
+  }, [visits])
+  //#endregion
+
+
   return (
     <div className='Account'>
       <UserHeader />
+
       <h1>Upcoming Visits</h1>
       <div>
         {editingVisitId ? (
           <EditVisitForm />
         ) : (
-          <Visits visits={visits} />
+          <Visits visits={upcomingVisits} />
         )}
       </div>
+
       <h1>Past Visits</h1>
+      <div>
+        <Visits visits={pastVisits} />
+      </div>
     </div>
   )
 }

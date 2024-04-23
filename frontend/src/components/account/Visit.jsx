@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { fetchVisitDetails, setEditingVisitId, updateVisit, deleteVisit } from '../../actions/visits.js'
 
-export default function Visit({ visit, setCurrentId }) {
+export default function Visit({ visit }) {
   const dispatch = useDispatch()
 
   const handleEdit = () => {
