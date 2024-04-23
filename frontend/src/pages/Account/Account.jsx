@@ -34,13 +34,5 @@ export default function Account() {
       </div>
       <h1>Past Visits</h1>
     </div>
-
-    // <div className='Account'>
-    //   <h1>Upcoming Visits</h1>
-    //   <div>
-    //     <Visits setCurrentId={setCurrentId}/>
-    //   </div>
-    //   <h1>Past Visits</h1>
-    // </div>
   )
 }

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import { updateVisit } from '../../actions/visits.js';
@@ -52,7 +51,8 @@ export default function EditVisitForm() {
           reason: visit.reason || "",
           otherReason: visit.otherReason || "",
         });
-        navigate("/account");
+
+        console.log('after if visit', visit)
     }
   }, [visit]);
 
@@ -69,8 +69,10 @@ export default function EditVisitForm() {
 
     // After updating, dispatch VISIT_UPDATED and handle navigation
     dispatch({ type: VISIT_UPDATED });
-    // After updating, navigate back to Account page
-    // Navigate('./account'); // Navigate to '/account' page
+
+    // After updating, refresh the page to see all visits. 
+    // Since it's already in Account page (as /account), no need to navigate it to the page again
+    navigate(0)
   };
 
   return (

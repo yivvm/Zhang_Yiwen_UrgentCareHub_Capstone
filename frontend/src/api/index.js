@@ -5,7 +5,7 @@ const url = "http://localhost:5100/visits";
 export const fetchVisits = () => axios.get(url);
 export const createVisit = (newVisit) => {
   // console.log("newVisit from api/index", newVisit);
-  axios.post(url, newVisit);
+  return axios.post(url, newVisit);
 };
 export const fetchVisitDetails = (id) => axios.get(`${url}/${id}`);
 export const updateVisit = (id, updatedVisit) =>

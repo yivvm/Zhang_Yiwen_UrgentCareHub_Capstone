@@ -9,8 +9,6 @@ import {
   DELETE,
 } from "../constants/actionTypes";
 
-// import { Navigate } from "react-router-dom";
-
 // Action Creators - functions that returns actions (type, payload)
 export const getVisits = () => async (dispatch) => {
   try {
@@ -57,7 +55,6 @@ export const updateVisit = (id, visit) => async (dispatch) => {
 
     dispatch({ type: UPDATE, payload: data });
     dispatch({ type: VISIT_UPDATED }); // Dispatch visit update action
-    // navigate("/account");
     return data;
   } catch (error) {
     console.log(error.message);
