@@ -5,9 +5,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #ffffff; /* Add your desired background color */
+    background-color: #03045E; 
     z-index: 1000;
-    color: #03045E;
+    color: #EDF2FB;
 }
 
 .Nav ul {
@@ -16,6 +16,7 @@
     justify-content: space-evenly;
     align-items: center;
     height: 50px;
+    list-style: none;
 }
 
 .Nav ul li {
@@ -26,10 +27,11 @@
     text-decoration: none;
     cursor: pointer;
     font-size: 20px;
+    color: #EDF2FB;
 }
 
 .Nav ul li a:hover {
-    color: #023E8A;
+    color: #CCDBFD;
     font-weight: bold;
 }
 

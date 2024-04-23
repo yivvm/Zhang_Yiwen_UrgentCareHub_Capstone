@@ -1,5 +1,5 @@
 body {
-    background-color: #f4f4f4;
+    background-color: #D7E3FC;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -18,5 +18,28 @@ body {
     flex-direction: row;
     display: flex;
     margin: 6rem 0;
+}
+
+.button {
+    text-decoration: none;
+    margin: .5em .5em 0 0;
+    padding: 1em 2em; 
+    /* background-color: #001845;  */
+    color: white; 
+    border-radius: 0.25em;
+    font-size: 16px;
+    border: 0;
+    background-image: linear-gradient(75deg, #0466C8, darkblue, darkblue, #0353A4); 
+    background-size: 300% ;
+    background-position: left;
+    
+    transition: 300ms background-position ease-in-out;
+    cursor: pointer;
+}
+
+  
+.button:hover{
+    background-position: right; 
+    opacity: 0.9;
 }
 

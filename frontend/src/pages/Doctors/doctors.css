@@ -21,7 +21,7 @@
     padding: 0 1rem 0 0;
 }
 
-button {
+.department-btn {
     width: 100%;
     background-color: darkblue;
     color: white;
@@ -40,7 +40,7 @@ button:hover {
 
 .results {
     padding: 15px 10px;
-    background-color: rgb(77, 77, 201);
+    background-color: #0466C8;
     color: white;
     font-size: 1rem;
     width: 100%;
