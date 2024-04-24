@@ -15,11 +15,13 @@ export default function Visit({ visit }) {
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
-    const optionsMonthDay = { month: 'short', day: 'numeric'};
+    const optionsDay = { day: 'numeric' };
+    const optionsMonth = { month: 'short' };
     const optionsYear = { year: 'numeric' };
-    const monthDay = date.toLocaleDateString('en-US', optionsMonthDay);
+    const day = Number(date.toLocaleDateString('en-US', optionsDay)) + 1;
+    const month = date.toLocaleDateString('en-US', optionsMonth);
     const year = date.toLocaleDateString('en-US', optionsYear);
-    return { monthDay, year }
+    return { day, month, year }
   }
 
   const formatTime = (timeStr) => {
@@ -32,7 +34,7 @@ export default function Visit({ visit }) {
     <div className='card-visit'>
       <div className='visit-content'>
         <div className='visit-date-time'>
-          <h2 className='day'>{formatDate(visit.date).monthDay}</h2>
+          <h2 className='day'>{formatDate(visit.date).month} {formatDate(visit.date).day}</h2>
           <h3 className='year'>{formatDate(visit.date).year}</h3>
           <h2 className='time'>{formatTime(visit.time)}</h2>
         </div>
@@ -40,7 +42,7 @@ export default function Visit({ visit }) {
           <div><strong>{visit.reason}</strong></div>
           <div>{<strong>{(visit.otherReason)}</strong> || ""}</div>
           <div className='name'>Name: {visit.firstName} {visit.lastName}</div>
-          <div>DOB: {formatDate(visit.dateOfBirth).monthDay}, {formatDate(visit.dateOfBirth).year}</div>
+          <div>DOB: {formatDate(visit.dateOfBirth).month} {formatDate(visit.dateOfBirth).day}, {formatDate(visit.dateOfBirth).year}</div>
           <div>Gender: {visit.gender}</div>
           <div>Phone: {visit.phone}</div>
           <div className='email'>Email: {visit.email}</div>

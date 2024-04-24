@@ -39,6 +39,13 @@ export default function Account() {
     const now = new Date(); // Current local time
     // console.log(now)
 
+    // Sort visits by date and time
+    visits.sort((a, b) => {
+      const dateA = combineDateTime(a.date, a.time);
+      const dateB = combineDateTime(b.date, b.time);
+      return dateB - dateA;
+    });
+
     const upcoming = visits.filter(visit => {
       console.log('time', combineDateTime(visit.date, visit.time))
       return combineDateTime(visit.date, visit.time) >= now

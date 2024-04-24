@@ -92,18 +92,18 @@ export default function Form({ currentId, setCurrentId }) {
                     type="radio"
                     id="female"
                     name="gender"
-                    value="female"
-                    checked={visitData.gender === "female"}
-                    onChange={() => setVisitData({ ...visitData, gender: "female" })}
+                    value="Female"
+                    checked={visitData.gender === "Female"}
+                    onChange={() => setVisitData({ ...visitData, gender: "Female" })}
                 />
                 <label htmlFor="female">Female</label>
                 <input
                     type="radio"
                     id="male"
                     name="gender"
-                    value="male"
-                    checked={visitData.gender === "male"}
-                    onChange={() => setVisitData({ ...visitData, gender: "male" })}
+                    value="Male"
+                    checked={visitData.gender === "Male"}
+                    onChange={() => setVisitData({ ...visitData, gender: "Male" })}
                 />
                 <label htmlFor="male">Male</label>
             </div>
@@ -135,7 +135,7 @@ export default function Form({ currentId, setCurrentId }) {
             </div>
 
             <div>
-                <label htmlFor="other">Other Reasons</label>
+                <label htmlFor="other">Other Reasons / Additional Information</label>
                 <input type="text" name="other" placeholder="Please let us know ..." value={visitData.otherReason} onChange={(e) => setVisitData({ ...visitData, otherReason: e.target.value})}/>
             </div>
 
