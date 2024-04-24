@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const url = "http://localhost:5100/visits";
-const url = "https://zhang-yiwen-urgentcarehub-capstone.onrender.com/visits";
+const url = "http://localhost:5100/visits";
+// const url = "https://zhang-yiwen-urgentcarehub-capstone.onrender.com/visits";
 
 export const fetchVisits = () => axios.get(url);
 export const createVisit = (newVisit) => {

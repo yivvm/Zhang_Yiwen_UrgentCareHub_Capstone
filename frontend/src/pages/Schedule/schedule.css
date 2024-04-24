@@ -58,7 +58,8 @@
 
 .image-container {
     max-width: 100%; /* Set maximum width to 100% of its container */
-    margin: 0 auto; 
+    /* margin: 0 auto;  */
+    padding: 0 auto;
     overflow: hidden; 
   }
   

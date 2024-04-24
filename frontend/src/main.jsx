@@ -11,6 +11,7 @@ import reducers from './reducers'
 import { BrowserRouter } from 'react-router-dom'
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)))
+// const store = configureStore({ reducer: reducers })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
