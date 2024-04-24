@@ -6,10 +6,12 @@ const visitSchema = mongoose.Schema({
     type: Date,
     required: true,
     default: Date.now,
+    inex: true,
   },
   time: {
     type: String,
     required: true,
+    index: true,
     // validate: {
     //   validator: function (value) {
     //     return /^(0?[1-9]|1[0-2]):([0-5]\d) ?([APap][mM])$/.test(value);
@@ -60,6 +62,8 @@ const visitSchema = mongoose.Schema({
     default: new Date(),
   },
 });
+
+visitSchema.index({ date: 1, time: 1 });
 
 const ScheduledVisits = mongoose.model("ScheduledVisits", visitSchema);
 
