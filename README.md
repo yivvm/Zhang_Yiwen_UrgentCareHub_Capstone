@@ -31,6 +31,9 @@ Perhaps I travel around the country.
 I may travel to some locations on business trips.  
 Alternatively, I might visit my family, relatives and friends in different locations.
 
+Here is a persona representing the target market, the potential users and why they would want to use this web application.
+<img src="./screenshots/persona.png" alt="persona" width="500">
+
 ## Features
 
 ### Landing Page
