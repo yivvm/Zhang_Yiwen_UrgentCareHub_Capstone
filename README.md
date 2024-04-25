@@ -21,7 +21,7 @@ This is a full-stack web application built using the MERN stack (MongoDB, Expres
   HTML | CSS | JavaScript | React | React Router | Redux (for managing application state) | Axios | Pokemon API
 
 - **Backend**:
-  JavaScript | MongoDB | Express | Node.js | Mongoose | Axios
+  JavaScript | MongoDB | Express | Node.js | Mongoose
 
 ## Concept
 
