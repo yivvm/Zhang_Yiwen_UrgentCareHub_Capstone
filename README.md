@@ -8,10 +8,12 @@ This is a full-stack web application built using the MERN stack (MongoDB, Expres
 
 ## Table of Contents
 
-- [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
+- [Concept](#concept)
+- [Features](#features)
+- [Database](#database)
+- [Deployment](#deployment)
+- [Code Sample](#code-sample)
 
 ## Technologies Used
 
@@ -23,20 +25,17 @@ This is a full-stack web application built using the MERN stack (MongoDB, Expres
 
 ## Concept
 
-One day, the thought crossed my mind: I wish I could use an urgent care facility which I could always access my medical records no matter where I go in the nation.
-Perhaps I relocate and don't have a family doctor yet.
-Perhaps I travel around the country.
-I may travel to some locations on business trips.
-Alternatively, I might visit my family, relatives and friends in different locations.  
-<img src="image-url.jpg" alt="Thumbnail" width="100" />
-<img src="image-url.jpg" alt="Thumbnail" width="100" />
+One day, the thought crossed my mind: I wish I could use an urgent care facility which I could always access my medical records no matter where I go in the nation.  
+Perhaps I relocate and don't have a family doctor yet.  
+Perhaps I travel around the country.  
+I may travel to some locations on business trips.  
+Alternatively, I might visit my family, relatives and friends in different locations.
 
 ## Features
 
 ### Landing Page
 
 ![Home](./screenshots/Home.png)
-<img src="./screenshots/Home.png" alt="Home Page" width="100">
 
 ### Find-A-Doctor Page
 
@@ -52,7 +51,7 @@ Alternatively, I might visit my family, relatives and friends in different locat
 ### Schedule Page
 
 - **Add Visit**: Users can easily schedule new patient appointments online, providing details such as date, time, patient information, and reason(s) for visit.
-- This form connects to the MongoDB backend database.
+- This form connects to the backend MongoDB database.
 - The real-time local time is shown in the page as a reference for the user to schedule an appointment online.
 
 ![Schedule](./screenshots/Schedule.png)
@@ -63,12 +62,13 @@ Alternatively, I might visit my family, relatives and friends in different locat
 - **Delete Visit**: Users can cancel the visits, that is, removing visits from the system.
 - **View Visit as filtered and sorted**: The visits are filtered into upcoming visits and past visits; and visits are sorted by date and time in both sections.
 - **View Visit Details**: Detailed information for each visit can be viewed, including date, time, patient details and reason(s) for visit.
+- Users can also navigate to different sections via user header in their accounts.
 
-#### All scheduled visits listed
+#### All scheduled visits listed:
 
 ![Account](./screenshots/Account.png)
 
-#### Edit Form
+#### Edit Form:
 
 ![EditForm](./screenshots/EditForm-short.png)
 
@@ -79,7 +79,7 @@ Alternatively, I might visit my family, relatives and friends in different locat
 - The application includes a navigation bar for easy access to different sections.
 - The application includes a footer with side maps for easy access to different sections.
 
-#### Database
+## Database
 
 ![MongoDB](./screenshots/mongodb.png)
 
