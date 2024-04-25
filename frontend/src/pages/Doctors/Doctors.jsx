@@ -79,7 +79,8 @@ export default function Doctors() {
        
         
         <div className="doctors-cards">
-            <DoctorCardList doctorcards={doctorcards} />
+            {doctorcards.length == 0 ? <h1>Click a Department to get a directory of doctors.</h1> : <DoctorCardList doctorcards={doctorcards} />}
+            
         </div>
 
     </div>
